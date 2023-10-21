@@ -1,25 +1,53 @@
 "use client";
-import { Button, Slider } from "@mui/material";
 import Link from "next/link";
+import './form.css'; 
+import Image from 'next/image';
 
 export default function form() {
+
+  const ScheduleButton = () => {
+    return (
+      <Link href="/form/schedule">
+      <div className="button">
+        <div> 
+        <div className="top-button green">
+          <p className="center">SCHEDULE</p>
+          </div>
+        <div className="bottom-button">
+        </div>
+      </div>
+      </div>
+      </Link>
+    );
+  };
+
+  const DwellButton = () => {
+    return (
+      <Link href="/form/dwell ">
+      <div className="button">
+        <div> 
+        <div className="top-button orange">
+          <p className="center">DWELL TIME</p>
+          </div>
+        <div className="bottom-button">
+           {/* <Image src="./arrow.svg" alt="Arrow" width={200} height={200} /> */}
+        </div>
+      </div>
+      </div>
+      </Link>
+    );
+  };
+  
+  
+
   return (
     <>
-      <p>form page</p>
-      <Button>
-        <Link href="/">Home</Link>
-      </Button>
-      <div>
-        <Slider
-          aria-label="Temperature"
-          defaultValue={30}
-          valueLabelDisplay="auto"
-          step={1}
-          marks
-          min={1}
-          max={10}
-        />
-      </div>
+      <h1 className="title">WHAT WOULD YOU LIKE TO SEE CHANGED</h1>
+    
+      <ScheduleButton />
+      <DwellButton />
+
+
     </>
   );
 }
